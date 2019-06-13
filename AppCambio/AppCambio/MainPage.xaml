@@ -6,8 +6,11 @@
 
     <!-- Aqui estamos usando o StackLayout, ou seja, Layout em pilha
          onde todos os componentes ficam empilhados. Note que também
-         definimos Padding (espaçamento interno) de 10 -->
-    <StackLayout Padding="10">
+         definimos Padding (espaçamento interno) de 10 e o VerticalOptions
+         definido como Center signifca que se houver espaço nosso layout
+         ficará no centro da tela, nem colado no topo do telefone, nem
+        colado na parte de baixo. -->
+    <StackLayout Padding="10" VerticalOptions="Center">
 
         <!-- Elemento Label (rótulo) para dar um "aviso" ao usuário. 
              Note que temos os atributos do elemento, como o FontSize
@@ -15,17 +18,20 @@
         <Label Text="Qual é o valores em Reais R$ ?" 
                VerticalOptions="Start" 
                HorizontalOptions="Center"
-               FontSize="Large"/>
+               FontSize="Large"
+               FontAttributes="Bold" />
 
         <Label Text="Qual é o valor da cotação do Dolar de hoje?" 
                VerticalOptions="Start" 
                FontSize="Medium" />
 
         <!-- Elemento Entry (entrada) serve para o usuário digitar dados. 
-             Assim como o label, também possui atributos, como o keyboard
-             que definimos para aceitar apenas números -->
+             Assim como o label, também possui atributos, como o x:Nameque
+             indispensável para podermos identificar este elemento no código
+             C#, logo temos que adicionar o x:Name para todos os elementos
+             que iremos referenciar no código C# -->
         <Entry x:Name="txt_cotacao" 
-               Placeholder="1 USD vale quantos R$? " 
+               Placeholder="1 USD vale quantos R$? "
                Keyboard="Numeric" />
 
         <Label Text="Digite a quantia em Dolares:" 
@@ -33,7 +39,7 @@
                FontSize="Medium" />       
         
         <Entry x:Name="txt_quantia_usd" 
-               Placeholder="USD $ " 
+               Placeholder="USD $ "
                Keyboard="Numeric" />
 
         <!-- Elemento Button (Botão) é um botão de ações. Quase
@@ -46,12 +52,15 @@
                 FontSize="Large" 
                 Clicked="Button_Clicked" />
 
-        <Label Text="Valor convertido em R$:" 
-               VerticalOptions="Start" 
-               FontSize="Medium" />
+        <Label Text="O valor convertido é:" 
+               HorizontalOptions="Center"
+               FontSize="Large"
+               FontAttributes="Bold" />
         
-        <Entry x:Name="txt_reais" 
-               Placeholder="R$ Aparecerá aqui  " 
-               Keyboard="Numeric" />
+        <Label x:Name="txt_reais"
+               FontSize="Large"
+               HorizontalOptions="Center"
+               FontAttributes="Bold"
+               TextColor="Red" />
     </StackLayout>
 </ContentPage>
