@@ -104,7 +104,7 @@ namespace AppCambio
 
             } catch (Exception ex)
             {
-                Console.Write(ex.Message);
+                txt_reais.Text = "Ops, ocorreu um erro: \n " + ex.Message;                
             } // Fecha o laço try catch.
         } // fecha o método.
     } // fecha a classe MainPage
