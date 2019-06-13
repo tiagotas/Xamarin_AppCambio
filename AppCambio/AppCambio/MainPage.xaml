@@ -4,11 +4,54 @@
              xmlns:local="clr-namespace:AppCambio"
              x:Class="AppCambio.MainPage">
 
-    <StackLayout>
-        <!-- Place new controls here -->
-        <Label Text="Welcome to Xamarin.Forms!" 
-           HorizontalOptions="Center"
-           VerticalOptions="CenterAndExpand" />
-    </StackLayout>
+    <!-- Aqui estamos usando o StackLayout, ou seja, Layout em pilha
+         onde todos os componentes ficam empilhados. Note que também
+         definimos Padding (espaçamento interno) de 10 -->
+    <StackLayout Padding="10">
 
+        <!-- Elemento Label (rótulo) para dar um "aviso" ao usuário. 
+             Note que temos os atributos do elemento, como o FontSize
+             que define o tamanho do texto. -->
+        <Label Text="Qual é o valores em Reais R$ ?" 
+               VerticalOptions="Start" 
+               HorizontalOptions="Center"
+               FontSize="Large"/>
+
+        <Label Text="Qual é o valor da cotação do Dolar de hoje?" 
+               VerticalOptions="Start" 
+               FontSize="Medium" />
+
+        <!-- Elemento Entry (entrada) serve para o usuário digitar dados. 
+             Assim como o label, também possui atributos, como o keyboard
+             que definimos para aceitar apenas números -->
+        <Entry x:Name="txt_cotacao" 
+               Placeholder="1 USD vale quantos R$? " 
+               Keyboard="Numeric" />
+
+        <Label Text="Digite a quantia em Dolares:" 
+               VerticalOptions="Start" 
+               FontSize="Medium" />       
+        
+        <Entry x:Name="txt_quantia_usd" 
+               Placeholder="USD $ " 
+               Keyboard="Numeric" />
+
+        <!-- Elemento Button (Botão) é um botão de ações. Quase
+             todos os botões são acompanhados do atributo
+             Clicked, que chama um método que está escrito no
+             arquivo C# anexo ao arquivo XAML, ou seja, no "código
+             por trás". Se o método não estiver definido no C# o App 
+             não irá compilar, mesmo com o XAML correto. -->
+        <Button Text="CONVERTER" 
+                FontSize="Large" 
+                Clicked="Button_Clicked" />
+
+        <Label Text="Valor convertido em R$:" 
+               VerticalOptions="Start" 
+               FontSize="Medium" />
+        
+        <Entry x:Name="txt_reais" 
+               Placeholder="R$ Aparecerá aqui  " 
+               Keyboard="Numeric" />
+    </StackLayout>
 </ContentPage>
