@@ -6,14 +6,11 @@ using System.Threading.Tasks;
 using Xamarin.Forms;
 
 /**
- * Aqui estamos adicionando dois using de componentes que usaremos neste projeto.
+ * Aqui estamos adicionando o using de um componente que usaremos neste projeto.
  * a plataforma .NET é bem completa e muitas coisas já estão prontas. Por exemplo
- * aqui vamos utilizar a System.Globalization para colocar o R$ em nossa moeda e
- * usaremos a RegularExpressions para remover as vírgulas que podem ser digitadas
- * nos valores.
+ * aqui vamos utilizar a System.Globalization para colocar o R$ em nossa moeda.
  */ 
 using System.Globalization;
-using System.Text.RegularExpressions;
 
 /**
  * Declaração do Namespace do App, geralmente o nome do projeto.
@@ -61,23 +58,12 @@ namespace AppCambio
             try
             {
                 /**
-                 * Nesta etapa estamos usando expressões regulares para remover as vígulas
-                 * dos números, trocando por pontos. Caso não façamos isso, mais abaixo no 
-                 * código teremos erros de conversão. As linguagens de programação
-                 * usam o ponto para separar as casas decimais, por exemplo: 1.2 e usam as
-                 * vírgulas para separar as casas de milhar, como 1,200
-                 */ 
-                string cotacao_sem_virgula = Regex.Replace(txt_cotacao.Text, @"\D", "");
-                string valor_dolares_sem_virgula = Regex.Replace(txt_quantia_usd.Text, @"\D", "");              
-
-
-                /**
-                 * Convertendo os valores já "limpos" para decimal. Todos os dados pegos na interface
+                 * Convertendo os valores para decimal. Todos os dados pegos na interface
                  * (entry) vem como String, então para realiar operações matemáticas, temos que converter
                  * para para tipos de dados númericos, neste caso Decimal por estar trabalhando com dinheiro.
-                 */ 
-                decimal cotacao = Convert.ToDecimal(cotacao_sem_virgula);
-                decimal dolares = Convert.ToDecimal(valor_dolares_sem_virgula);
+                 */
+                decimal cotacao = Convert.ToDecimal(txt_cotacao.Text);
+                decimal dolares = Convert.ToDecimal(txt_quantia_usd.Text);
 
                 /**
                  *  Fazendo a conversão de valores.
