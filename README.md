@@ -16,20 +16,17 @@ Em caso de dúvidas, entre em contato:
 
 <h1>Veja os outros Apps que Vamos Desenvolver nesta Disciplina</h1>
 
-Aula 3 - AppIMC
 <img src="https://i.imgur.com/lvE08Dz.gif">
+Aula 3 - AppIMC
 
-
-Aula 4 - AppEtecCalc
 <img src="https://i.imgur.com/GqBCP9Z.gif">
+Aula 4 - AppEtecCalc
 
-
-Aula 4 - AppEtecLight
 <img src="https://i.imgur.com/yq353mV.gif">
+Aula 5 - AppEtecLight
 
-
-Aula 5 - AppEtecFlix
 <img src="https://i.imgur.com/iIO9umq.gif">
+Aula 6 - AppEtecFlix
 
 <h1>Mais Informações sobre o Curso Técnico em Desenvolvimento de Sistemas</h1>
 
